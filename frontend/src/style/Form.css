@@ -1,0 +1,66 @@
+.form{
+    margin: 15px auto; /* Reduced margin */
+    max-width: 700px; /* Reduced max-width */
+    padding: 15px; /* Reduced padding */
+    border-radius: 6px; /* Slightly smaller border-radius */
+    background-color: #f8f9fa;
+  }
+  
+  .form-header {
+    font-size: 22px; /* Reduced font size */
+    font-weight: bold;
+    margin-bottom: 15px; /* Reduced margin */
+    text-align: center;
+    font-family: 'Cursive', sans-serif;
+    color: #5a5a5a;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Reduced gap */
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-control {
+    padding: 8px; /* Reduced padding */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px; /* Reduced font size */
+  }
+  
+  .quill-editor {
+    height: 150px; /* Reduced height */
+    background-color: white;
+  }
+  
+  .description {
+    line-height: 1.5; /* Reduced line-height */
+    font-size: 14px; /* Reduced font size */
+    color: #333;
+    margin-bottom: 1rem; /* Reduced margin */
+  }
+  
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  
+  
+  .custom-file-label {
+    display: inline-block;
+    padding: 0.25rem 0.5rem; /* Reduced padding */
+    font-size: 0.875rem; /* Smaller font size */
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff; 
+    background-color: #007bff; /* Button background color */
+    border: 1px solid #007bff; /* Button border color */
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }

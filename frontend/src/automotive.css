@@ -1,0 +1,108 @@
+.auto-section {
+  padding: 40px 0;
+  background: #fff;
+}
+
+.auto-section .row {
+  align-items: center;
+}
+
+
+.left-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+}
+
+
+
+.auto {
+  background-image: url('/images/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+.plane-img {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  object-fit: cover;
+}
+
+.cover{
+  display: flex;
+  justify-content: space-between;
+}
+.cover img{
+  height: 100px;
+
+
+transform: translateY(-50%);
+animation: continuousRotate 5s linear infinite;
+}
+
+@keyframes continuousRotate {
+from {
+    transform: translateY(-50%) rotate(0deg);
+}
+to {
+    transform: translateY(-50%) rotate(360deg);
+}
+}
+
+.right-col {
+  padding: 20px;
+  padding-left: 20px;
+}
+
+.auto-heading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+
+.auto-description {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+.auto-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  columns: 2;
+  column-gap: 20px;
+}
+
+.auto-features li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.auto-features li::before {
+  content: "•";
+  color: #426399;
+  position: absolute;
+  left: 0;
+}
+
+/* Red button */
+.btn-learn-more {
+  background-color: #426399;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-learn-more:hover {
+  background-color: #426399;
+}

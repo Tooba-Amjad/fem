@@ -1,0 +1,57 @@
+.composite-section {
+    padding: 40px 0;
+  }
+  
+  .section-heading {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .section-description {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .markets-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    columns: 2; /* Display in two columns */
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    column-gap: 20px; /* space between columns */
+    margin-bottom: 20px;
+  }
+  
+  .markets-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Red bullet or an icon bullet if you prefer */
+  .markets-list li::before {
+    content: "•";
+    color: #ea5c1f; /* same red as the button */
+    position: absolute;
+    left: 0;
+  }
+  
+  /* Red button (Bootstrap style) */
+  .action-button {
+    background-color: #ea5c1f;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-button:hover {
+    background-color: white; 
+    border: 2px solid #ea5c1f ;
+    color: #ea5c1f;
+  }
+  

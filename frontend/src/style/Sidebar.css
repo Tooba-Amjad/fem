@@ -1,0 +1,134 @@
+ body{
+ 
+  margin: 0;
+  padding: 0;
+  
+ }
+ .main-container {
+
+  padding: 20px;
+}
+
+.sidebar {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+.sidebar .admin-info {
+  text-align: center;
+}
+
+.sidebar .admin-info p {
+  margin-top: 15px; /* Reduced margin */
+  font-weight: 600;
+  font-size: 1rem; /* Smaller font size */
+}
+
+.sidebar .admin-info img {
+  border-radius: 50%;
+  width: 120px; /* Smaller image size */
+  height: 120px;
+}
+
+.sidebar .nav-link {
+  color: #495057;
+  font-size: 0.875rem; /* Smaller font size */
+  padding: 16px; /* Reduced padding */
+  font-weight: 500;
+}
+
+.offcanvas .nav-link {
+  color: #495057;
+  font-size: 0.875rem; /* Smaller font size */
+  font-weight: 500;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #dee2e6;
+  border-radius: 5px;
+}
+
+.offcanvas .nav-link:hover {
+  background-color: #dee2e6;
+  border-radius: 5px;
+}
+
+.vertical-line {
+  border-left: 1px solid #dee2e6;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -8px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.toggle-button {
+  display: inline-block;
+  width: 30px; /* Smaller width */
+  height: 15px; /* Smaller height */
+  background-color: #ccc;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-button .circle {
+  width: 12px; /* Smaller circle width */
+  height: 12px; /* Smaller circle height */
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: left 0.3s;
+}
+
+.toggle-button.active .circle {
+  left: 16px; /* Adjusted position */
+  background-color: #007bff;
+}
+
+.notification-icon,
+.add-button {
+  border: none;
+  background-color: #f8f9fa;
+  font-size: 1.5rem; /* Smaller font size */
+  cursor: pointer;
+}
+
+.add-button {
+  font-size: 2rem; /* Slightly larger font size */
+}
+
+.performance-dashboard {
+  margin: 20px;
+  padding: 20px;
+}
+
+
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+ 
+ 
+  
+
+
+
+.toggle-button .circle {
+  transition: background-color 0.3s;
+}
+
+.toggle-button .circle.active {
+  background-color: #007bff; /* Light theme circle color */
+}

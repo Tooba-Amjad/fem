@@ -1,0 +1,74 @@
+.sector-section {
+  padding: 40px 0;
+  padding-left: 2px;
+  padding-right: 0px;
+}
+
+.sector-section .row {
+  align-items: center;
+}
+
+
+.bg-container {
+  background-image: url('/images/bgx.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 30px;
+  margin: 0 auto;
+}
+
+.plan-img {
+ 
+  max-width: 100%;
+  height: auto;
+  object-fit: contain; 
+}
+
+.sector-heading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.sector-description {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  columns: 2;
+  column-gap: 20px;
+}
+
+.features-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.features-list li::before {
+  content: "•";
+  color: #ea5c1f;
+  position: absolute;
+  left: 0;
+}
+
+.btn-learn-more {
+  background-color: #ea5c1f;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-learn-more:hover {
+  background-color: white;
+  border: 2px solid #ea5c1f;
+  color: #ea5c1f;
+}
+

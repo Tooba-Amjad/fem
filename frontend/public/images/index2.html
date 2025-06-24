@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Advanced Pattern Effects Demo</title>
+  <style>
+    /* Basic page styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+        background-color: 426399;
+      margin: 20px;
+      font-family: sans-serif;
+      background: #426399;
+      color: white;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .demo-container {
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    .demo-container h2 {
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .description {
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto 20px auto;
+    }
+    .pattern-img {
+      display: inline-block;
+      width: 120px; /* Adjust as needed */
+      height: auto;
+      margin: 0 auto;
+    }
+    /* Common utility classes */
+    .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .space {
+      height: 200px; /* For spacing or parallax demonstration */
+    }
+
+    /* ============================================================
+       1) 3D Flip on Hover
+       ============================================================ */
+    .flip-container {
+      perspective: 1000px; /* Creates a 3D space for the flip */
+      display: inline-block;
+    }
+    .flip-card {
+      width: 120px;
+      height: 120px;
+      transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transform-style: preserve-3d;
+      position: relative;
+    }
+    .flip-container:hover .flip-card {
+      transform: rotateY(180deg);
+    }
+    /* Front & Back faces */
+    .flip-front, .flip-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden; /* Hide the backside when facing front */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .flip-front {
+      background: #fff;
+    }
+    .flip-back {
+      background: #eaeaea;
+      transform: rotateY(180deg);
+    }
+    .flip-front img, .flip-back img {
+      width: 80px;
+      height: auto;
+    }
+
+    /* ============================================================
+       2) Mouse Parallax (small JS needed)
+       ============================================================ */
+    .parallax-container {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ccc;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden; /* Hide overflow as the pattern might shift */
+    }
+    .parallax-item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s;
+    }
+    .parallax-item img {
+      width: 100px;
+    }
+
+    /* ============================================================
+       3) Combined Scale + Rotate + Color Shift
+       ============================================================ */
+    .combo-effect {
+      display: inline-block;
+      transition: transform 0.5s ease, filter 0.5s ease;
+    }
+    .combo-effect:hover {
+      transform: scale(1.2) rotate(15deg);
+      filter: hue-rotate(90deg) brightness(1.2);
+    }
+
+    /* ============================================================
+       4) Clip-Path Animation on Hover
+       ============================================================ */
+    .clip-container {
+      display: inline-block;
+      width: 120px;
+      height: 120px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .clip-container img {
+      width: 120px;
+      height: 120px;
+      transition: clip-path 0.8s ease-in-out;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .clip-container:hover img {
+      /* Example: a diamond shape clip */
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+
+    /* ============================================================
+       5) Scroll-Based Reveal with Intersection Observer
+       ============================================================ */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================================
+       6) Multi-Step Keyframe Animation (Morph-like effect)
+       ============================================================ */
+    .multi-keyframes {
+      animation: multiSteps 3s infinite ease-in-out;
+      width: 120px;
+    }
+    @keyframes multiSteps {
+      0% {
+        transform: scale(1) rotate(0deg);
+        filter: hue-rotate(0deg);
+      }
+      25% {
+        transform: scale(1.1) rotate(10deg);
+        filter: hue-rotate(60deg);
+      }
+      50% {
+        transform: scale(1) rotate(0deg);
+        filter: hue-rotate(120deg);
+      }
+      75% {
+        transform: scale(1.1) rotate(-10deg);
+        filter: hue-rotate(180deg);
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+        filter: hue-rotate(0deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Advanced Pattern Effects Demo</h1>
+
+ 
+
+  <!-- 2) Mouse Parallax -->
+  <div class="demo-container">
+    <h2>2) Mouse Parallax</h2>
+    <p class="description">
+      Move your mouse inside the box to shift the pattern slightly (JS-based).
+    </p>
+    <div class="parallax-container" id="parallax-box">
+      <div class="parallax-item">
+        <img src="pattern-07.png" alt="Parallax Pattern" />
+      </div>
+    </div>
+  </div>
+
+  <!-- 3) Combined Scale + Rotate + Color Shift -->
+  <div class="demo-container">
+    <h2>3) Scale + Rotate + Color Shift on Hover</h2>
+    <p class="description">
+      Hover to see a combined transform (scale, rotate) and color shift.
+    </p>
+    <img class="pattern-img combo-effect"
+         src="pattern-07.png"
+         alt="Combo Effect Pattern" />
+  </div>
+
+ 
+ 
+
+  <!-- 6) Multi-Step Keyframe Animation -->
+  <div class="demo-container">
+    <h2>6) Multi-Step Keyframe Animation</h2>
+    <p class="description">
+      A looped animation that changes scale, rotation, and hue in stages.
+    </p>
+    <img class="pattern-img multi-keyframes"
+         src="pattern-07.png"
+         alt="Multi-step Animation Pattern" />
+  </div>
+
+  <!-- JavaScript for Mouse Parallax and Scroll-Based Reveal -->
+  <script>
+    // 2) Mouse Parallax
+    const parallaxBox = document.getElementById('parallax-box');
+    const parallaxItem = parallaxBox.querySelector('.parallax-item');
+    parallaxBox.addEventListener('mousemove', (e) => {
+      const rect = parallaxBox.getBoundingClientRect();
+      // Calculate center
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      // Mouse position relative to center
+      const offsetX = (e.clientX - centerX) * 0.05; // Adjust multiplier for effect
+      const offsetY = (e.clientY - centerY) * 0.05;
+      parallaxItem.style.transform = `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`;
+    });
+
+    // 5) Scroll-Based Reveal using Intersection Observer
+    const revealItem = document.getElementById('scrollRevealItem');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    observer.observe(revealItem);
+  </script>
+
+</body>
+</html>

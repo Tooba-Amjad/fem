@@ -1,0 +1,13 @@
+.fw-bold{
+    color:#ea5c1f;
+}
+.why-fem-composities{
+    margin: 70px 90px 0px;
+  
+}
+.why-fem-composities h2{
+    margin: 5px;
+}
+@media (max-width: 768px) {
+    .why-fem-composities{
+    margin: 9px;}}
