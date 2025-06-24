@@ -5,7 +5,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';  // Remove BrowserRo
 
 import { AuthContext } from './context/authContext'; 
 import Sidebar from './admin/Sidebar';
-import Topbar from './admin/Topbar';
+import TopBar from './admin/TopBar';
 
 import Homepage from './pages/Homepage';
 import Aerospace from './pages/Aerospace';
@@ -59,7 +59,7 @@ function App() {
           <div className="row">
             <Sidebar />
             <div className="col-md-9 col-lg-10 col-sm-12 content mx-auto">
-              <Topbar />
+              <TopBar />
               <Routes>
                 <Route
                   path="/dashboard"
