@@ -10,7 +10,7 @@ import '../style/Topbar.css'; // Ensure this file exists and contains the styles
 
 
 
-const Topbar = () => {
+const TopBar = () => {
 
 
   const { user, logout } = useContext(AuthContext);
@@ -109,4 +109,4 @@ const Topbar = () => {
   );
 };
 
-export default Topbar;
+export default TopBar;
