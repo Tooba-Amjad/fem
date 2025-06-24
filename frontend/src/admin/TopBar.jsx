@@ -8,7 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../style/Topbar.css'; // Ensure this file exists and contains the styles
 
-const socket = io(  import.meta.env.PROD  ? 'wss://your-production-server.com' : 'ws://localhost:5000');
 
 
 const Topbar = () => {
